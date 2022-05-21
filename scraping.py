@@ -145,10 +145,13 @@ def scrape_all():
 
 
     #end browser session
-    browser.quit()
+    # browser.quit()
 
 
     # In[21]:
+    # Set up Splinter
+    executable_path = {'executable_path': ChromeDriverManager().install()}
+    browser = Browser('chrome', **executable_path, headless=False)
 
 
     # 1. Use browser to visit the URL 
@@ -163,7 +166,7 @@ def scrape_all():
     # In[22]:
 
 
-    display(news_soup)
+    # display(news_soup)
 
 
     # In[23]:

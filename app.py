@@ -51,7 +51,7 @@ def index():
 def scrape():
     mars = mongo.db.mars
     data = scraping.scrape_all()
-    mars.update_one({}, data, upsert=True)
+    mars.update({}, data, upsert=True)
     return redirect('/', code=302)
 if __name__ == "__main__":
    app.run(debug=True)
